@@ -8,9 +8,11 @@
 
  This script is best utilised on a scheduler, such as Cron on a low-energy consumption micro-computer like a RPi.
 
- Cron Expression (Relist every 65mins):
- */65 * * * * export DISPLAY=:0 && /usr/bin/python3 ~/Documents/relist.py
+ Cron Expression (Activate Every 65mins):
  
+ ```
+ */65 * * * * export DISPLAY=:0 && /usr/bin/python3 ~/Documents/relist.py
+ ```
  
  
  
