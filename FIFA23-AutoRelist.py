@@ -12,23 +12,10 @@ PC_USER_AGENT = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (K
 
 warnings.filterwarnings("ignore")
 
-def getCCodeLangAndOffset() -> tuple:
-    try:
-        nfo = ipapi.location()
-        lang = nfo['languages'].split(',')[0]
-        geo = nfo['country']
-        tz = str(round(int(nfo['utc_offset']) / 100 * 60))
-        return(lang, geo, tz)
-    except:
-        getCCodeLangAndOffset()
-
-LANG, GEO, TZ = getCCodeLangAndOffset()
-
 def browserSetup(headless_mode: bool = False, user_agent: str = PC_USER_AGENT) -> WebDriver:
     from selenium.webdriver.chrome.options import Options
     options = Options()
     options.add_argument("user-agent=" + user_agent)
-    options.add_argument('lang=' + LANG.split("-")[0])
 
     #Insert profile path to Chrome User Data
     options.add_argument("--user-data-dir=C:/Users/ewans/AppData/Local/Google/Chrome/User Data/")
