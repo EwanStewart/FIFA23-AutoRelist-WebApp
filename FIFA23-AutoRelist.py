@@ -1,6 +1,7 @@
 import time
 import ipapi
 import warnings
+import subprocess
 
 from selenium import webdriver
 from selenium.webdriver.chrome.webdriver import WebDriver
@@ -77,9 +78,6 @@ def main():
             
 main()
 
-import subprocess
-
-filepath="C:/Users/ewans/Desktop/sleep.bat"
+filepath = "C:/Users/ewans/Desktop/relist.bat"
 p = subprocess.Popen(filepath, shell=True, stdout = subprocess.PIPE)
-
 stdout, stderr = p.communicate()

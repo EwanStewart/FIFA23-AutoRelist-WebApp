@@ -123,7 +123,14 @@ def autobuy(browser):
             WebDriverWait(browser, 60).until(ec.element_to_be_clickable((By.XPATH, '/html/body/main/section/nav/button[4]'))).click() #store
             WebDriverWait(browser, 60).until(ec.element_to_be_clickable((By.XPATH, '/html/body/main/section/section/div[2]/div/div/div[3]'))).click() # packs
             WebDriverWait(browser, 20).until(ec.element_to_be_clickable((By.XPATH, "//button[text()='Classic Packs']"))).click()
-            WebDriverWait(browser, 60).until(ec.element_to_be_clickable((By.XPATH, '/html/body/main/section/section/div[2]/div/div[3]/div[1]/div[3]/button'))).click() #bronze
+            pack = WebDriverWait(browser, 60).until(ec.element_to_be_clickable((By.XPATH, '/html/body/main/section/section/div[2]/div/div[3]/div[1]/div[3]/button')))
+            text = WebDriverWait(browser, 60).until(ec.presence_of_element_located((By.XPATH, '/html/body/main/section/section/div[2]/div/div[3]/div[1]/div[3]/button/span')))
+            if text.text == "750":
+                pack.click()
+            else:
+                exit
+
+
             WebDriverWait(browser, 60).until(ec.element_to_be_clickable((By.XPATH, '/html/body/div[4]/section/div/div/button[1]'))).click() #confirm
             counter = 0
             time.sleep(5)
@@ -142,8 +149,6 @@ def autobuy(browser):
                 time.sleep(0.5)
                 if class_name in player:
                     print("player")
-                    #WebDriverWait(browser, 60).until(ec.presence_of_element_located((By.XPATH, '/html/body/main/section/section/div[2]/div/div/section[2]/div/div/div[2]/div[3]/button[9]'))).click() #compare
-                    #WebDriverWait(browser, 60).until(ec.presence_of_element_located((By.XPATH, '/html/body/main/section/section/div[2]/div/div/section[2]/div/div/div[2]/div[3]/button[8]'))).click() #transfer list
                     try:
                         selected_item = wait_for_button_xpath(browser, 10, "/html/body/main/section/section/div[2]/div/div/section/div/div/div[1]/div/div[2]/div/div/div[1]/div")
 
@@ -178,7 +183,7 @@ def autobuy(browser):
                 elif class_name == "large misc item common":
                     print("coins")
                     WebDriverWait(browser, 60).until(ec.element_to_be_clickable((By.XPATH, '/html/body/main/section/section/div[2]/div/div/section[2]/div/div/div[2]/div[2]/button[2]'))).click() #redeem    
-                elif class_name == "quicksell large misc item rare":
+                elif class_name == "large misc item rare" or class_name == "small misc item rare":
                     WebDriverWait(browser, 60).until(ec.element_to_be_clickable((By.XPATH, '/html/body/main/section/section/div[2]/div/div/section[2]/div/div/div[2]/div[2]/button[2]'))).click()
                 else:
                     print("quicksell " + class_name)
@@ -189,5 +194,4 @@ def autobuy(browser):
                     
                     
 
-            
 main()
