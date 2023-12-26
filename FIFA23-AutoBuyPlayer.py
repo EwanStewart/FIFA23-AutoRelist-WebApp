@@ -54,9 +54,9 @@ def main():
     autobuy(browser)
 
 def autobuy(browser):
-        orignal_mbn_price = 18000
+        orignal_mbn_price = 1500
         mbn_price = orignal_mbn_price
-        increment_mbn_price = 250
+        increment_mbn_price = 100
         times_without_success = 0
         increment_mbn = False
 
@@ -74,39 +74,47 @@ def autobuy(browser):
         WebDriverWait(browser, 60).until(ec.presence_of_element_located((By.XPATH, '/html/body/main/section/section/div[2]/div/div[1]/div/button[1]'))).click()
     
         #quality
-        WebDriverWait(browser, 60).until(ec.presence_of_element_located((By.XPATH, '/html/body/main/section/section/div[2]/div/div[2]/div/div[1]/div[1]/div[2]/div/div'))).click()
+        #WebDriverWait(browser, 60).until(ec.presence_of_element_located((By.XPATH, '/html/body/main/section/section/div[2]/div/div[2]/div/div[1]/div[1]/div[2]/div/div'))).click()
         #gold
-        WebDriverWait(browser, 60).until(ec.presence_of_element_located((By.XPATH, '/html/body/main/section/section/div[2]/div/div[2]/div/div[1]/div[1]/div[2]/div/ul/li[4]'))).click()
+        #WebDriverWait(browser, 60).until(ec.presence_of_element_located((By.XPATH, '/html/body/main/section/section/div[2]/div/div[2]/div/div[1]/div[1]/div[2]/div/ul/li[4]'))).click()
 
         #rarity
         WebDriverWait(browser, 60).until(ec.presence_of_element_located((By.XPATH, '/html/body/main/section/section/div[2]/div/div[2]/div/div[1]/div[1]/div[3]/div/div'))).click()
 
         #rare
-        WebDriverWait(browser, 60).until(ec.presence_of_element_located((By.XPATH, '/html/body/main/section/section/div[2]/div/div[2]/div/div[1]/div[1]/div[3]/div/ul/li[3]'))).click()
-
+        #WebDriverWait(browser, 60).until(ec.presence_of_element_located((By.XPATH, '/html/body/main/section/section/div[2]/div/div[2]/div/div[1]/div[1]/div[3]/div/ul/li[3]'))).click()
+        #common
+        WebDriverWait(browser, 60).until(ec.presence_of_element_located((By.XPATH, '/html/body/main/section/section/div[2]/div/div[2]/div/div[1]/div[1]/div[3]/div/ul/li[2]'))).click()
+        
         #pos
-        WebDriverWait(browser, 60).until(ec.presence_of_element_located((By.XPATH, '/html/body/main/section/section/div[2]/div/div[2]/div/div[1]/div[1]/div[4]/div/div'))).click()
+        #WebDriverWait(browser, 60).until(ec.presence_of_element_located((By.XPATH, '/html/body/main/section/section/div[2]/div/div[2]/div/div[1]/div[1]/div[4]/div/div'))).click()
         #forward
-        WebDriverWait(browser, 60).until(ec.presence_of_element_located((By.XPATH, '/html/body/main/section/section/div[2]/div/div[2]/div/div[1]/div[1]/div[4]/div/ul/li[4]'))).click()
+        #WebDriverWait(browser, 60).until(ec.presence_of_element_located((By.XPATH, '/html/body/main/section/section/div[2]/div/div[2]/div/div[1]/div[1]/div[4]/div/ul/li[4]'))).click()
 
         #nation select start
-        WebDriverWait(browser, 60).until(ec.presence_of_element_located((By.XPATH, '/html/body/main/section/section/div[2]/div/div[2]/div/div[1]/div[1]/div[6]/div/div'))).click()
+        #WebDriverWait(browser, 60).until(ec.presence_of_element_located((By.XPATH, '/html/body/main/section/section/div[2]/div/div[2]/div/div[1]/div[1]/div[6]/div/div'))).click()
 
         #Brazil
-        WebDriverWait(browser, 60).until(ec.presence_of_element_located((By.XPATH, '/html/body/main/section/section/div[2]/div/div[2]/div/div[1]/div[1]/div[6]/div/ul/li[3]'))).click()
+        #WebDriverWait(browser, 60).until(ec.presence_of_element_located((By.XPATH, '/html/body/main/section/section/div[2]/div/div[2]/div/div[1]/div[1]/div[6]/div/ul/li[3]'))).click()
         #nation select end
 
         #league select start
         WebDriverWait(browser, 60).until(ec.presence_of_element_located((By.XPATH, '/html/body/main/section/section/div[2]/div/div[2]/div/div[1]/div[1]/div[7]/div/div'))).click()
 
         #EPL
-        WebDriverWait(browser, 60).until(ec.presence_of_element_located((By.XPATH, '/html/body/main/section/section/div[2]/div/div[2]/div/div[1]/div[1]/div[7]/div/ul/li[2]'))).click()
+        #WebDriverWait(browser, 60).until(ec.presence_of_element_located((By.XPATH, '/html/body/main/section/section/div[2]/div/div[2]/div/div[1]/div[1]/div[7]/div/ul/li[2]'))).click()
+        
+        #l1
+        WebDriverWait(browser, 60).until(ec.presence_of_element_located((By.XPATH, '/html/body/main/section/section/div[2]/div/div[2]/div/div[1]/div[1]/div[7]/div/ul/li[7]'))).click()
         #league select end
 
         #club
         WebDriverWait(browser, 60).until(ec.presence_of_element_located((By.XPATH, '/html/body/main/section/section/div[2]/div/div[2]/div/div[1]/div[1]/div[8]/div/div'))).click()
         #arsenal
-        WebDriverWait(browser, 60).until(ec.presence_of_element_located((By.XPATH, '/html/body/main/section/section/div[2]/div/div[2]/div/div[1]/div[1]/div[8]/div/ul/li[3]'))).click()
+        #WebDriverWait(browser, 60).until(ec.presence_of_element_located((By.XPATH, '/html/body/main/section/section/div[2]/div/div[2]/div/div[1]/div[1]/div[8]/div/ul/li[3]'))).click()
+        
+        #OM
+        WebDriverWait(browser, 60).until(ec.presence_of_element_located((By.XPATH, '/html/body/main/section/section/div[2]/div/div[2]/div/div[1]/div[1]/div[8]/div/ul/li[12]'))).click()
 
         while (1):
             #start max buy now
@@ -142,11 +150,11 @@ def autobuy(browser):
                 mbn_price -= increment_mbn_price
                 decrement_mbn_count+=1
 
-            if (increment_mbn_count == 2):
+            if (increment_mbn_count == 5):
                 increment_mbn = True
                 increment_mbn_count = 0
                 mbn_price = orignal_mbn_price
-            elif (decrement_mbn_count == 3):
+            elif (decrement_mbn_count == 5):
                 increment_mbn = False
                 decrement_mbn_count = 0
                 mbn_price = orignal_mbn_price

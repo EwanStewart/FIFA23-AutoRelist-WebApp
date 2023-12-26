@@ -59,47 +59,21 @@ def main():
 def autobuy(browser):
         
         possibleItems = {
-             #badges
-            "large badge item rare": "300",
-            "large badge item common": "200",
-
-            "small badge item rare": "300",
-            "small badge item common": "200",
-
-            #kits
-            "large kit item rare": "300",
-            "large kit item common": "200",
-
-            "small kit item rare": "300",
-            "small kit item common": "200",
-
-            #players
+           #players
             "large player item rare ut-item-loaded": "400",
-            "large player item common ut-item-loaded": "200",
+            "large player item common ut-item-loaded": "400",
 
             "small player item rare ut-item-loaded": "400",
-            "small player item common ut-item-loaded": "200",
-
-            #managers
-            "large manager staff item common ut-item-loaded": "200",
-            "large manager staff item rare ut-item-loaded": "300",
-
-            "small manager staff item common ut-item-loaded": "200",
-            "small manager staff item rare ut-item-loaded": "300",
+            "small player item common ut-item-loaded": "400",
 
             "large player item ut-item-loading rare": "400",
-            "large player item ut-item-loading common": "200",
+            "large player item ut-item-loading common": "400",
 
             "small player item ut-item-loading rare": "400",
-            "small player item ut-item-loading common": "200",
-
-            #managers
-            "large manager staff item ut-item-loading common": "200",
-            "large manager staff item ut-item-loading rare": "300",
-
-            "small manager staff item ut-item-loading common": "200",
-            "small manager staff item ut-item-loading rare": "300",
+            "small player item ut-item-loading common": "400",
         }
+
+        
 
         possibleBGs = ["https://www.ea.com/ea-sports-fc/ultimate-team/web-app/content/24B23FDE-7835-41C2-87A2-F453DFDB2E82/2024/fut/items/images/backgrounds/itemBGs/large/cards_bg_e_0_1_1.png"]
 
@@ -163,6 +137,20 @@ def autobuy(browser):
                     break
             except Exception as e:
                 time.sleep(3)
+
+                try:
+                    wait_for_button_xpath(browser, 5, "/html/body/main/section/section/div[2]/div/div/div/section[1]/header/button[1]").click()
+                    time.sleep(5)
+                except:
+                    print("No Items Sold")
+
+                try:
+                    wait_for_button_xpath(browser, 5, "/html/body/main/section/section/div[2]/div/div/div/section[2]/header/button[1]").click()
+                    wait_for_button_xpath(browser, 5, "/html/body/div[4]/section/div/div/button[2]").click()
+                    time.sleep(5)
+                except:
+                    print("No Relist")
+
                 print(e)
                 if counter == 1:
                     break

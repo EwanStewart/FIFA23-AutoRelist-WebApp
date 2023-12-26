@@ -76,3 +76,10 @@ def main():
             browser.quit()
             
 main()
+
+import subprocess
+
+filepath="C:/Users/ewans/Desktop/sleep.bat"
+p = subprocess.Popen(filepath, shell=True, stdout = subprocess.PIPE)
+
+stdout, stderr = p.communicate()
